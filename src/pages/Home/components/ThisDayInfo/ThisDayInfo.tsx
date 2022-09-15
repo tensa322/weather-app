@@ -2,6 +2,7 @@ import React from 'react'
 import s from './ThisDayInfo.module.scss'
 import cloud from '../../../../assets/images/cloud.png'
 import { ThisDayItem } from './ThisDayItem'
+import { Days } from '../Days/Days'
 
 type Props = {}
 
@@ -38,7 +39,7 @@ export const ThisDayInfo = (props: Props) => {
    return (<div className={s.this__day_info}>
       <div className={s.this__day_info_items}>
          {items.map((item: Item) => (
-            <ThisDayItem item={item} />
+            <ThisDayItem item={item} key={item.name}/>
          ))}
       </div>
       <img className={s.cloud__img} src={cloud} alt="облако" />
